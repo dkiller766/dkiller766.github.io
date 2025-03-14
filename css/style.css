@@ -1,0 +1,74 @@
+/*Barra de Navegação*/
+.navbar {
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    transition: 0.3s;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+/*------------------*/
+
+
+/*Pop-up do Formulário*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+/*------------------*/
+
+
+/*Cards dos contatos*/
+#contactsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    gap: 20px;
+    max-width: 900px; /* Define um limite para os cards não espalharem demais */
+    margin: 0 auto; /* Centraliza o container na tela */
+}
+#contactsContainer .col-sm-6 {
+    flex: 1 1 250px; /* Ajusta o tamanho mínimo para melhor distribuição */
+    max-width: 300px;
+}
+/*------------------*/

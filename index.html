@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JS -->
+    <script src="scripts/script.js" defer></script>
+    
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Agenda de Contatos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Contatos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recentes.html">Recentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favoritos.html">Favoritos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Botão para adicionar contato -->
+    <div class="container my-4">
+        <button id="addContactBtn" class="btn btn-success">Adicionar Contato</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="contactModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Adicionar Novo Contato</h3>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Nome" required class="form-control mb-2">
+                <input type="text" id="phone" placeholder="Número" required class="form-control mb-2">
+                <input type="email" id="email" placeholder="Email" class="form-control mb-2">
+                <input type="text" id="address" placeholder="Endereço" class="form-control mb-2">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Container para os contatos -->
+    <div id="contactsContainer" class="container my-5 row"></div>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-dark text-light text-center py-3">
+        <p class="mb-0">© 2025 DevSoft - Agenda de Contatos. Todos os direitos reservados.</p>
+        <p class="mb-0">
+            <a href="https://github.com/seu-github" class="text-light text-decoration-none">GitHub</a> | 
+            <a href="mailto:contato@devsoft.com" class="text-light text-decoration-none">Contato</a>
+        </p>
+    </footer>
+
+</body>
+</html>
