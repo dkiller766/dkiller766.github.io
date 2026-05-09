@@ -3,114 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Profissional</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Jhonatan Alcantara | Dev &amp; Designer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">Portfólio</div>
-        <ul class="nav-links">
-            <li><a href="#home">Início</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-    </nav>
 
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">JA</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <p class="loader-label">Carregando...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>JA<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">In&#237;cio</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#projects" class="nav-link">Projetos</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ===================== HERO ===================== -->
     <section id="home" class="hero">
-        <div class="profile-photo">
-            <img src="WhatsApp Image 2025-04-09 at 00.40.05.jpeg" alt="Foto de Perfil">
+        <canvas id="heroCanvas"></canvas>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
         </div>
         <div class="hero-content">
-            <h1>Olá, eu sou <span class="highlight">Jhonatan Alcantara</span></h1>
-            <p class="subtitle">Desenvolvedor Web | Designer | Profissional Criativo</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn primary">Contate-me</a>
-                <a href="#projects" class="btn secondary">Ver Projetos</a>
+            <div class="hero-badge fade-in-item">
+                <span class="badge-dot"></span>
+                Dispon&#237;vel para projetos
             </div>
+            <h1 class="hero-title">
+                <span class="hero-greeting fade-in-item">Ol&#225;, eu sou</span>
+                <span class="hero-name fade-in-item">Jhonatan<br>Alcantara</span>
+            </h1>
+            <div class="hero-typed fade-in-item">
+                <span class="typed-prefix">// </span><span id="typed-text"></span>
+            </div>
+            <p class="hero-description fade-in-item">
+                Transformando ideias em experi&#234;ncias digitais extraordin&#225;rias com c&#243;digo limpo e design criativo.
+            </p>
+            <div class="hero-cta fade-in-item">
+                <a href="#projects" class="btn btn-primary">
+                    <span>Ver Projetos</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Contate-me</span>
+                </a>
+            </div>
+            <div class="hero-stats fade-in-item">
+                <div class="stat">
+                    <span class="stat-number" data-count="2">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Anos de exp.</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projetos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="8">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Tecnologias</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
+    <!-- ===================== ABOUT ===================== -->
     <section id="about" class="about">
-        <h2>Sobre Mim</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>um jovem estudante comunicativo,proativo e empenhado focado em desenvolver projetos pessoais e exercirtar minhas habilidades</p>
-                <div class="skills">
-                    <h3>Habilidades</h3>
-                    <div class="skill-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>node</span>
-                        <span>java</span>
-                        <span>python</span>
-                        <span>c++</span>
-                        <span>php</span>
-                        <span>sql</span>
+        <div class="section-separator"></div>
+        <div class="section-container">
+            <div class="section-header fade-up">
+                <span class="section-tag">// sobre mim</span>
+                <h2 class="section-title">Quem sou <span class="gradient-text">eu?</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-wrap fade-left">
+                    <div class="about-image-container" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.2" data-tilt-perspective="800">
+                        <img src="WhatsApp Image 2025-04-09 at 00.40.05.jpeg" alt="Jhonatan Alcantara" class="about-photo">
+                        <div class="about-image-overlay"></div>
+                        <div class="about-image-border"></div>
+                    </div>
+                    <div class="about-badge-floating">
+                        <i class="fas fa-code"></i>
+                        <span>Full Stack Dev</span>
+                    </div>
+                    <div class="about-exp-badge">
+                        <span class="exp-number">2+</span>
+                        <span class="exp-label">Anos</span>
+                    </div>
+                </div>
+                <div class="about-content fade-right">
+                    <p class="about-text">
+                        Sou um jovem desenvolvedor <strong>comunicativo, proativo e empenhado</strong>,
+                        focado em desenvolver projetos pessoais e aprimorar minhas habilidades.
+                        Apaixonado por tecnologia e design, busco criar solu&#231;&#245;es criativas e funcionais.
+                    </p>
+                    <p class="about-text">
+                        Tenho experi&#234;ncia em desenvolvimento <strong>Full Stack</strong>, trabalhando com
+                        diversas tecnologias e sempre buscando aprender e evoluir a cada projeto.
+                    </p>
+                    <div class="skills-section">
+                        <h3 class="skills-title">Stack Tecnol&#243;gico</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card" data-tilt data-tilt-max="8" data-tilt-perspective="500">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                                <div class="skill-level"><div class="skill-bar" data-width="90"></div></div>
+                            </div>
+                            <div class="skill-card" data-tilt data-tilt-max="8" data-tilt-perspective="500">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                                <div class="skill-level"><div class="skill-bar" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-card" data-tilt data-tilt-max="8" data-tilt-perspective="500">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                                <div class="skill-level"><div class="skill-bar" data-width="80"></div></div>
+                            </div>
+                            <div class="skill-card" data-tilt data-tilt-max="8" data-tilt-perspective="500">
+                                <i class="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                                <div class="skill-level"><div class="skill-bar" data-width="70"></div></div>
+                            </div>
+                            <div class="skill-card" data-tilt data-tilt-max="8" data-tilt-perspective="500">
+                                <i class="fab fa-java"></i>
+                                <span>Java</span>
+                                <div class="skill-level"><div class="skill-bar" data-width="65"></div></div>
+                            </div>
+                            <div class="skill-card" data-tilt data-tilt-max="8" data-tilt-perspective="500">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                                <div class="skill-level"><div class="skill-bar" data-width="70"></div></div>
+                            </div>
+                            <div class="skill-card" data-tilt data-tilt-max="8" data-tilt-perspective="500">
+                                <i class="fas fa-database"></i>
+                                <span>SQL</span>
+                                <div class="skill-level"><div class="skill-bar" data-width="75"></div></div>
+                            </div>
+                            <div class="skill-card" data-tilt data-tilt-max="8" data-tilt-perspective="500">
+                                <i class="fas fa-code"></i>
+                                <span>PHP</span>
+                                <div class="skill-level"><div class="skill-bar" data-width="60"></div></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===================== PROJECTS ===================== -->
     <section id="projects" class="projects">
-        <h2>Projetos</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="Captura de tela 2025-05-02 150925.png" alt="Projeto 1">
-                <h3>lista de contatos</h3>
-                <p>projeto de uma lista de contatos com html,css e javascript. onde é possivel listar em ordem alfabetica, favoritar editar e deletar contatos</p>
-                <a href="https://listadecontatos.onrender.com/index.html" class="btn primary">Ver Projeto</a>
+        <div class="section-separator"></div>
+        <div class="section-container">
+            <div class="section-header fade-up">
+                <span class="section-tag">// projetos</span>
+                <h2 class="section-title">Meus <span class="gradient-text">Projetos</span></h2>
             </div>
-            <div class="project-card">
-                <img src="Captura de tela 2026-04-02 024103.png" alt="Projeto 2">
-                <h3>gestor de frotas</h3>
-                <p>projeto integrado com banco de dados para gestão completa de frota, faturamento, sinistros, manutenções e postos de trabalho desenvolvido sozinho visando inicialmente para a empresa hagana segurança porém com margem para utilização por outras empresas</p>
-                <a href="https://frota-liard.vercel.app" class="btn primary">Ver Projeto</a>
-            </div>
-            <div class="project-card">
-                <img src="" alt="Projeto 3">
-                <h3>Projeto 3</h3>
-                <p>estarei desenvolvendo em breve no momento apenas projeto 1 e 2</p>
+            <div class="projects-grid">
+
+                <div class="project-card fade-up" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.12" data-tilt-perspective="900">
+                    <div class="project-image-wrap">
+                        <img src="Captura de tela 2025-05-02 150925.png" alt="Lista de Contatos" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://listadecontatos.onrender.com/index.html" target="_blank" class="project-link-btn" aria-label="Abrir projeto">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <h3 class="project-title">Lista de Contatos</h3>
+                        <p class="project-desc">Aplica&#231;&#227;o completa com ordena&#231;&#227;o alfab&#233;tica, sistema de favoritos, edi&#231;&#227;o e exclus&#227;o de contatos.</p>
+                        <a href="https://listadecontatos.onrender.com/index.html" target="_blank" class="project-btn">
+                            <span>Ver Projeto</span><i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="project-number">01</div>
+                </div>
+
+                <div class="project-card featured fade-up" style="--delay:0.1s" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.12" data-tilt-perspective="900">
+                    <div class="project-badge">Destaque</div>
+                    <div class="project-image-wrap">
+                        <img src="Captura de tela 2026-04-02 024103.png" alt="Gestor de Frotas" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://frota-liard.vercel.app" target="_blank" class="project-link-btn" aria-label="Abrir projeto">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Full Stack</span>
+                            <span class="tag">Database</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                        <h3 class="project-title">Gestor de Frotas</h3>
+                        <p class="project-desc">Sistema empresarial completo para gest&#227;o de frotas, faturamento, ocorr&#234;ncias e manuten&#231;&#227;o. Desenvolvido para a Hagana Security.</p>
+                        <a href="https://frota-liard.vercel.app" target="_blank" class="project-btn">
+                            <span>Ver Projeto</span><i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="project-number">02</div>
+                </div>
+
+                <div class="project-card coming-soon fade-up" style="--delay:0.2s" data-tilt data-tilt-max="5" data-tilt-perspective="900">
+                    <div class="project-content-center">
+                        <div class="coming-soon-icon"><i class="fas fa-rocket"></i></div>
+                        <h3 class="project-title">Em Breve</h3>
+                        <p class="project-desc">Novo projeto em desenvolvimento. Fique de olho!</p>
+                        <div class="progress-bar-wrap"><div class="progress-bar-fill"></div></div>
+                        <span class="progress-label">Em desenvolvimento...</span>
+                    </div>
+                    <div class="project-number">03</div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ===================== CONTACT ===================== -->
     <section id="contact" class="contact">
-        <h2>Contato</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <p>WhatsApp: <a href="https://wa.me//+5511976125871">(11) 97612-5871</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/jhonatan-alc%C3%A2ntara-de-oliveira-amorim-94696b245/">Jhonatan alcantara</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>Email:<a href="mailto:jhonatanalcantara89@gmail.com" target="_blank"> jhonatanalcantara89@gmail.com</p>
-                </div>
+        <div class="section-separator"></div>
+        <div class="section-container">
+            <div class="section-header fade-up">
+                <span class="section-tag">// contato</span>
+                <h2 class="section-title">Vamos <span class="gradient-text">Conversar?</span></h2>
+                <p class="section-subtitle">Estou sempre aberto a novas oportunidades e projetos interessantes.</p>
             </div>
-            <form class="contact-form" action="https://formspree.io/f/mdkgezno" method="POST">
-                <input type="text" name="name" placeholder="Seu Nome" required>
-                <input type="email" name="email" placeholder="Seu Email" required>
-                <textarea name="message" placeholder="Sua Mensagem" required></textarea>
-                <button type="submit" class="btn primary">Enviar Mensagem</button>
-            </form>
+            <div class="contact-grid">
+                <div class="contact-info fade-left">
+                    <a href="https://wa.me/5511976125871" class="contact-card" data-tilt data-tilt-max="4" data-tilt-perspective="600">
+                        <i class="fab fa-whatsapp"></i>
+                        <div><h4>WhatsApp</h4><span>(11) 97612-5871</span></div>
+                    </a>
+                    <a href="https://linkedin.com/in/jhonatanalcantara" target="_blank" class="contact-card" data-tilt data-tilt-max="4" data-tilt-perspective="600">
+                        <i class="fab fa-linkedin"></i>
+                        <div><h4>LinkedIn</h4><span>Jhonatan Alcantara</span></div>
+                    </a>
+                    <a href="mailto:jhonatanalcantara89@gmail.com" class="contact-card" data-tilt data-tilt-max="4" data-tilt-perspective="600">
+                        <i class="fas fa-envelope"></i>
+                        <div><h4>Email</h4><span>jhonatanalcantara89@gmail.com</span></div>
+                    </a>
+                    <div class="social-links">
+                        <a href="https://wa.me/5511976125871" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com/in/jhonatanalcantara" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:jhonatanalcantara89@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/dkiller766" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form fade-right" action="https://formspree.io/f/mdkgezno" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" required placeholder=" " autocomplete="off">
+                        <label for="name">Seu Nome</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" required placeholder=" " autocomplete="off">
+                        <label for="email">Seu Email</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Mensagem</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Enviar Mensagem</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 jhonatan alcantara. Todos os direitos reservados.</p>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="#home" class="footer-logo">
+                <span class="logo-bracket">&lt;</span>JA<span class="logo-bracket">/&gt;</span>
+            </a>
+            <p class="footer-text">Desenvolvido com <span class="heart">&#9829;</span> por Jhonatan Alcantara</p>
+            <p class="footer-copy">&copy; 2025 Todos os direitos reservados.</p>
+        </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
-
-</html> 
-
+</html>
